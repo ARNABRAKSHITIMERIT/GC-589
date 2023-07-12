@@ -1,0 +1,1041 @@
+WITH TEST_STATUS AS (
+
+(SELECT DISTINCT IF 
+( TYPEOF(user_id) = 'varchar',
+'TC-001 _ DATA TYPE OF USER-ID _ PASS',
+'TC-001 _ DATA TYPE OF USER-ID _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL 
+
+(SELECT DISTINCT IF 
+( TYPEOF(total_responses) = 'integer',
+'TC-002 _ DATA TYPE OF TOTAL-RESPONSES _ PASS',
+'TC-002 _ DATA TYPE OF TOTAL-RESPONSES _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL 
+
+(SELECT DISTINCT IF 
+( TYPEOF(minutes_transcribed) = 'real',
+'TC-003 _ DATA TYPE OF MINUTES-TRANSCRIBED _ PASS',
+'TC-003 _ DATA TYPE OF MINUTES-TRANSCRIBED _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL 
+
+(SELECT DISTINCT IF 
+( TYPEOF(email_file_name) = 'varchar',
+'TC-004 _ DATA TYPE OF EMAIL-FILE-NAME _ PASS',
+'TC-004 _ DATA TYPE OF EMAIL-FILE-NAME _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL 
+
+(SELECT DISTINCT IF 
+( TYPEOF(time_stamp_of_data_ingestion) = 'timestamp(3)',
+'TC-005 _ DATA TYPE OF TIMESTAMP-OF-DATA-INGESTION _ PASS',
+'TC-005 _ DATA TYPE OF TIMESTAMP-OF-DATA-INGESTION _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL 
+
+(SELECT DISTINCT IF 
+( TYPEOF(sender_email_id) = 'varchar',
+'TC-006 _ DATA TYPE OF SENDER-EMAIL-ID _ PASS',
+'TC-006 _ DATA TYPE OF SENDER-EMAIL-ID _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL 
+
+(SELECT DISTINCT IF 
+( TYPEOF(subject_line_of_the_email) = 'varchar',
+'TC-007 _ DATA TYPE OF SUBJECT-LINE-OF-THE-EMAIL _ PASS',
+'TC-007 _ DATA TYPE OF SUBJECT-LINE-OF-THE-EMAIL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(file_name) = 'varchar',
+'TC-008 _ DATA TYPE OF FILE-NAME _ PASS',
+'TC-008 _ DATA TYPE OF FILE-NAME _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(task_type) = 'varchar',
+'TC-009 _ DATA TYPE OF TASK-TYPE _ PASS',
+'TC-009 _ DATA TYPE OF TASK-TYPE _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(date) = 'timestamp(3)',
+'TC-010 _ DATA TYPE OF DATE _ PASS',
+'TC-010 _ DATA TYPE OF DATE _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(row_num) = 'bigint',
+'TC-011 _ DATA TYPE OF ROW-NUM _ PASS',
+'TC-011 _ DATA TYPE OF ROW-NUM _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(hours) = 'real',
+'TC-012 _ DATA TYPE OF HOURS _ PASS',
+'TC-012 _ DATA TYPE OF HOURS _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(average_task_response_duration_s) = 'real',
+'TC-013 _ DATA TYPE OF AVERAGE-TASK-RESPONSE-DURATION _ PASS',
+'TC-013 _ DATA TYPE OF AVERAGE-TASK-RESPONSE-DURATION _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(total_behavior_events) = 'integer',
+'TC-014 _ DATA TYPE OF TOTAL-BEHAVIOR-EVENTS _ PASS',
+'TC-014 _ DATA TYPE OF TOTAL-BEHAVIOR-EVENTS _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(total_disengages) = 'integer',
+'TC-015 _ DATA TYPE OF TOTAL-DISENGAGES _ PASS',
+'TC-015 _ DATA TYPE OF TOTAL-DISENGAGES _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(total_golden) = 'integer',
+'TC-016 _ DATA TYPE OF TOTAL-GOLDEN _ PASS',
+'TC-016 _ DATA TYPE OF TOTAL-GOLDEN _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(golden_scene_catch_rate) = 'real',
+'TC-017 _ DATA TYPE OF GOLDEN-SCENE-CATCH-RATE _ PASS',
+'TC-017 _ DATA TYPE OF GOLDEN-SCENE-CATCH-RATE _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(golden_scene_precision) = 'real',
+'TC-018 _ DATA TYPE OF GOLDEN-SCENE-PRECISION _ PASS',
+'TC-018 _ DATA TYPE OF GOLDEN-SCENE-PRECISION _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(golden_scene_recall) = 'real',
+'TC-019 _ DATA TYPE OF GOLDEN-SCENE-RECALL _ PASS',
+'TC-019 _ DATA TYPE OF GOLDEN-SCENE-RECALL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(behavior_event_catch_rate) = 'real',
+'TC-020 _ DATA TYPE OF BEHAVIOR-EVENT-CATCH-RATE _ PASS',
+'TC-020 _ DATA TYPE OF BEHAVIOR-EVENT-CATCH-RATE _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(true_positive_catch_rate) = 'real',
+'TC-021 _ DATA TYPE OF TRUE-POSITIVE-CATCH-RATE _ PASS',
+'TC-021 _ DATA TYPE OF TRUE-POSITIVE-CATCH-RATE _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(true_negative_catch_rate) = 'real',
+'TC-022 _ DATA TYPE OF TRUE-NEGATIVE-CATCH-RATE _ PASS',
+'TC-022 _ DATA TYPE OF TRUE-NEGATIVE-CATCH-RATE _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(total_tasks_completed) = 'real',
+'TC-023 _ DATA TYPE OF TOTAL-TASKS-COMPLETED _ PASS',
+'TC-023 _ DATA TYPE OF TOTAL-TASKS-COMPLETED _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(version) = 'varchar',
+'TC-024 _ DATA TYPE OF VERSION _ PASS',
+'TC-024 _ DATA TYPE OF VERSION _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(year) = 'varchar',
+'TC-025 _ DATA TYPE OF YEAR _ PASS',
+'TC-025 _ DATA TYPE OF YEAR _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(month) = 'varchar',
+'TC-026 _ DATA TYPE OF MONTH _ PASS',
+'TC-026 _ DATA TYPE OF MONTH _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF 
+( TYPEOF(day) = 'varchar',
+'TC-027 _ DATA TYPE OF DAY _ PASS',
+'TC-027 _ DATA TYPE OF DAY _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+user_id IS NOT NULL ,
+'TC-028 _ USER-ID IS NOT NULL _ PASS',
+'TC-028 _ USER-ID IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+total_responses IS NOT NULL ,
+'TC-029 _ TOTAL-RESPONSES IS NOT NULL _ PASS',
+'TC-029 _ TOTAL-RESPONSES IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")  
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+email_file_name IS NOT NULL ,
+'TC-030 _ EMAIL-FILE-NAME IS NOT NULL _ PASS',
+'TC-030 _ EMAIL-FILE-NAME IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")  
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+time_stamp_of_data_ingestion IS NOT NULL ,
+'TC-031 _ TIMESTAMP-OF-DATA-INGESTION IS NOT NULL _ PASS',
+'TC-031 _ TIMESTAMP-OF-DATA-INGESTION IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior") 
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+sender_email_id IS NOT NULL ,
+'TC-032 _ SENDER-EMAIL-ID IS NOT NULL _ PASS',
+'TC-032 _ SENDER-EMAIL-ID IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior" )
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+subject_line_of_the_email IS NOT NULL ,
+'TC-033 _ SUBJECT-LINE-OF-THE-EMAIL IS NOT NULL _ PASS',
+'TC-033 _ SUBJECT-LINE-OF-THE-EMAIL IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")  
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+file_name IS NOT NULL ,
+'TC-034 _ FILE-NAME IS NOT NULL _ PASS',
+'TC-034 _ FILE-NAME IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+ UNION ALL
+ 
+(SELECT DISTINCT IF (
+task_type IS NOT NULL ,
+'TC-035 _ TASK-TYPE IS NOT NULL _ PASS',
+'TC-035 _ TASK-TYPE IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior") 
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+date IS NOT NULL ,
+'TC-036 _ DATE IS NOT NULL _ PASS',
+'TC-036 _ DATE IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+row_num IS NOT NULL ,
+'TC-037 _ ROW-NUM IS NOT NULL _ PASS',
+'TC-037 _ ROW-NUM IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL  
+
+(SELECT DISTINCT IF (
+total_behavior_events IS NOT NULL ,
+'TC-038 _ TOTAL-BEHAVIOR-EVENTS IS NOT NULL _ PASS',
+'TC-038 _ TOTAL-BEHAVIOR-EVENTS IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+total_disengages IS NOT NULL ,
+'TC-039 _ TOTAL-DISENGAGES IS NOT NULL _ PASS',
+'TC-039 _ TOTAL-DISENGAGES IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+total_golden IS NOT NULL ,
+'TC-040 _ TOTAL-GOLDEN IS NOT NULL _ PASS',
+'TC-040 _ TOTAL-GOLDEN IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+version IS NOT NULL ,
+'TC-041 _ VERSION IS NOT NULL _ PASS',
+'TC-041 _ VERSION IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+year IS NOT NULL ,
+'TC-042 _ YEAR IS NOT NULL _ PASS',
+'TC-042 _ YEAR IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+month IS NOT NULL ,
+'TC-043 _ MONTH IS NOT NULL _ PASS',
+'TC-043 _ MONTH IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+day IS NOT NULL ,
+'TC-044 _ DAY IS NOT NULL _ PASS',
+'TC-044 _ DAY IS NOT NULL _ FAIL'
+) AS STATUS FROM "data-ingestion-nuro-playground"."nuro_simbehavior")
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(total_responses as VARCHAR) , '[^A-Za-z]') ,
+'TC-045 _ TOTAL-RESPONSES CONTAINS NO ALPHABETS _ PASS',
+'TC-045 _ TOTAL-RESPONSES CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_responses IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(minutes_transcribed as VARCHAR) , '[^A-Za-z]') ,
+'TC-046 _ MINUTES-TRANSCRIBED CONTAINS NO ALPHABETS _ PASS',
+'TC-046 _ MINUTES-TRANSCRIBED CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE minutes_transcribed IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(time_stamp_of_data_ingestion as VARCHAR) , '[^A-Za-z]') ,
+'TC-047 _ TIMESTAMP-OF-DATA-INGESTION CONTAINS NO ALPHABETS _ PASS',
+'TC-047 _ TIMESTAMP-OF-DATA-INGESTION CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE time_stamp_of_data_ingestion IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(date as VARCHAR) , '[^A-Za-z]') ,
+'TC-048 _ DATE CONTAINS NO ALPHABETS _ PASS',
+'TC-048 _ DATE CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE date IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(row_num as VARCHAR) , '[^A-Za-z]') ,
+'TC-049 _ ROW-NUM CONTAINS NO ALPHABETS _ PASS',
+'TC-049 _ ROW-NUM CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE row_num IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(hours as VARCHAR) , '[^A-Za-z]') ,
+'TC-050 _ HOURS CONTAINS NO ALPHABETS _ PASS',
+'TC-050 _ HOURS CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE hours IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(average_task_response_duration_s as VARCHAR) , '[^A-Za-z]') ,
+'TC-051 _ AVERAGE-TASK-RESPONSE-DURATIONS CONTAINS NO ALPHABETS _ PASS',
+'TC-051 _ AVERAGE-TASK-RESPONSE-DURATIONS CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE average_task_response_duration_s IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(total_behavior_events as VARCHAR) , '[^A-Za-z]') ,
+'TC-052 _ TOTAL-BEHAVIOR-EVENTS CONTAINS NO ALPHABETS _ PASS',
+'TC-052 _ TOTAL-BEHAVIOR-EVENTS CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_behavior_events IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(total_disengages as VARCHAR) , '[^A-Za-z]') ,
+'TC-053 _ TOTAL-DISENGAGES CONTAINS NO ALPHABETS _ PASS',
+'TC-053 _ TOTAL-DISENGAGES CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_disengages IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(total_golden as VARCHAR) , '[^A-Za-z]') ,
+'TC-054 _ TOTAL-GOLDEN CONTAINS NO ALPHABETS _ PASS',
+'TC-054 _ TOTAL-GOLDEN CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_golden IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(golden_scene_catch_rate as VARCHAR) , '[^A-Za-z]') ,
+'TC-055 _ GOLDEN-SCENE-CATCH-RATE CONTAINS NO ALPHABETS _ PASS',
+'TC-055 _ GOLDEN-SCENE-CATCH-RATE CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE golden_scene_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(golden_scene_precision as VARCHAR) , '[^A-Za-z]') ,
+'TC-056 _ GOLDEN-SCENE-PRECISION CONTAINS NO ALPHABETS _ PASS',
+'TC-056 _ GOLDEN-SCENE-PRECISION CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE golden_scene_precision IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(golden_scene_recall as VARCHAR) , '[^A-Za-z]') ,
+'TC-057 _ GOLDEN-SCENE-RECALL CONTAINS NO ALPHABETS _ PASS',
+'TC-057 _ GOLDEN-SCENE-RECALL CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE golden_scene_recall IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(behavior_event_catch_rate as VARCHAR) , '[^A-Za-z]') ,
+'TC-058 _ BEHAVIOR-EVENT-CATCH-RATE CONTAINS NO ALPHABETS _ PASS',
+'TC-058 _ BEHAVIOR-EVENT-CATCH-RATE CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE behavior_event_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(true_positive_catch_rate as VARCHAR) , '[^A-Za-z]') ,
+'TC-059 _ TRUE-POSITIVE-CATCH-RATE CONTAINS NO ALPHABETS _ PASS',
+'TC-059 _ TRUE-POSITIVE-CATCH-RATE CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE true_positive_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(true_negative_catch_rate as VARCHAR) , '[^A-Za-z]') ,
+'TC-060 _ TRUE-NEGATIVE-CATCH-RATE CONTAINS NO ALPHABETS _ PASS',
+'TC-060 _ TRUE-NEGATIVE-CATCH-RATE CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE true_negative_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(total_tasks_completed as VARCHAR) , '[^A-Za-z]') ,
+'TC-061 _ TOTAL-TASKS-COMPLETED CONTAINS NO ALPHABETS _ PASS',
+'TC-061 _ TOTAL-TASKS-COMPLETED CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_tasks_completed IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(version as VARCHAR) , '[^A-Za-z]') ,
+'TC-062 _ VERSION CONTAINS NO ALPHABETS _ PASS',
+'TC-062 _ VERSION CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE version IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(year as VARCHAR) , '[^A-Za-z]') ,
+'TC-063 _ YEAR CONTAINS NO ALPHABETS _ PASS',
+'TC-063 _ YEAR CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE year IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(month as VARCHAR) , '[^A-Za-z]') ,
+'TC-064 _ MONTH CONTAINS NO ALPHABETS _ PASS',
+'TC-064 _ MONTH CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE month IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(day as VARCHAR) , '[^A-Za-z]') ,
+'TC-065 _ DAY CONTAINS NO ALPHABETS _ PASS',
+'TC-065 _ DAY CONTAINS NO ALPHABETS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE day IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(total_responses as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-066 _ TOTAL-RESPONSES CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-066 _ TOTAL-RESPONSES CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_responses IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(row_num as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-067 _ ROW-NUM CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-067 _ ROW-NUM CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE row_num IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(total_behavior_events as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-068 _ TOTAL-BEHAVIOR-EVENTS CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-068 _ TOTAL-BEHAVIOR-EVENTS CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_behavior_events IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(total_disengages as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-069 _ TOTAL-DISENGAGES CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-069 _ TOTAL-DISENGAGES CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_disengages IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(total_golden as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-070 _ TOTAL-GOLDEN CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-070 _ TOTAL-GOLDEN CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_golden IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(version as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-071 _ VERSION CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-071 _ VERSION CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE version IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(year as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-072 _ YEAR CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-072 _ YEAR CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE year IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(month as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-073 _ MONTH CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-073 _ MONTH CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE month IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(day as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-074 _ DAY CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-074 _ DAY CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE day IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+NOT REGEXP_LIKE (CAST(email_file_name as VARCHAR) , '[^A-Za-z0-9]') ,
+'TC-075 _ EMAIL-FILE-NAME CONTAINS NO SPECIAL CHARACTERS _ PASS',
+'TC-075 _ EMAIL-FILE-NAME CONTAINS NO SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE email_file_name IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(minutes_transcribed as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-076 _ TOTAL-RESPONSES CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-076 _ TOTAL-RESPONSES CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE minutes_transcribed IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(hours as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-077 _ HOURS CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-077 _ HOURS CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE hours IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(average_task_response_duration_s as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-078 _ AVERAGE-TASK-RESPONSE-DURATIONS CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-078 _ AVERAGE-TASK-RESPONSE-DURATIONS CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE average_task_response_duration_s IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(golden_scene_catch_rate as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-079 _ GOLDEN-SCENE-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-079 _ GOLDEN-SCENE-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE golden_scene_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(golden_scene_precision as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-080 _ GOLDEN-SCENE-PRECISION CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-080 _ GOLDEN-SCENE-PRECISION CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE golden_scene_precision IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(golden_scene_recall as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-081 _ GOLDEN-SCENE-RECALL CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-081 _ GOLDEN-SCENE-RECALL CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE golden_scene_recall IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(behavior_event_catch_rate as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-082 _ BEHAVIOR-EVENT-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-082 _ BEHAVIOR-EVENT-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE behavior_event_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(true_positive_catch_rate as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-083 _ TRUE-POSITIVE-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-083 _ TRUE-POSITIVE-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE true_positive_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(true_negative_catch_rate as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-084 _ TRUE-NEGATIVE-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-084 _ TRUE-NEGATIVE-CATCH-RATE CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE true_negative_catch_rate IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(total_tasks_completed as VARCHAR) , '[0-9]+[.][0-9]+') ,
+'TC-085 _ TOTAL-TASKS-COMPLETED CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ PASS',
+'TC-085 _ TOTAL-TASKS-COMPLETED CONTAINS AT LEAST 1 DIGIT BEFORE AND AFTER DECIMAL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE total_tasks_completed IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(user_id as VARCHAR) LIKE '%@imerit.net') ,
+'TC-086 _ USER-ID ENDS WITH @imerit.net _ PASS',
+'TC-086 _ USER-ID ENDS WITH @imerit.net _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE user_id IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(sender_email_id as VARCHAR) LIKE '%@imerit.net') ,
+'TC-087 _ SENDER-EMAIL-ID ENDS WITH @imerit.net _ PASS',
+'TC-087 _ SENDER-EMAIL-ID ENDS WITH @imerit.net _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE sender_email_id IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(email_file_name as VARCHAR) NOT LIKE '% %') ,
+'TC-088 _ EMAIL-FILE-NAME HAS NO SPACE _ PASS',
+'TC-088 _ EMAIL-FILE-NAME HAS NO SPACE _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE email_file_name IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(time_stamp_of_data_ingestion as VARCHAR) ,
+'[2-9][0-9]{3}[-][0|1][0-9][-][0-3][0-9][ ][0-2][0-9][:][0-5][0-9][:][0-5][0-9][.][0]{3}') ,
+'TC-089 _ TIMESTAMP-OF-DATA-INGESTION FOLLOWS THE REGULAR EXPRESSION _ PASS',
+'TC-089 _ TIMESTAMP-OF-DATA-INGESTION FOLLOWS THE REGULAR EXPRESSION _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE time_stamp_of_data_ingestion IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+LENGTH(CAST(time_stamp_of_data_ingestion AS VARCHAR)) = 23 ,
+'TC-090 _ TIMESTAMP-OF-DATA-INGESTION FOLLOWS HAS LENGTH = 23 _ PASS',
+'TC-090 _ TIMESTAMP-OF-DATA-INGESTION FOLLOWS HAS LENGTH = 23 _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE time_stamp_of_data_ingestion IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST (SPLIT_PART(subject_line_of_the_email,'_',5) as VARCHAR) ,
+'[2-9][0-9]{3}[-][0|1][0-9][-][0-3][0-9]') ,
+'TC-091 _ SUBJECT-LINE-OF-THE-EMAIL FOLLOWS REGULAR EXPRESSION FOR THE LAST 10 CHARACTERS _ PASS',
+'TC-091 _ SUBJECT-LINE-OF-THE-EMAIL FOLLOWS REGULAR EXPRESSION FOR THE LAST 10 CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE subject_line_of_the_email IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+STARTS_WITH (subject_line_of_the_email , 'Nuro_SimBehavior_Performance_') ,
+'TC-092 _ SUBJECT-LINE-OF-THE-EMAIL STARTS WITH Nuro-SimBehavior-Performance _ PASS',
+'TC-092 _ SUBJECT-LINE-OF-THE-EMAIL STARTS WITH Nuro_SimBehavior-Performance _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE subject_line_of_the_email IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(subject_line_of_the_email as VARCHAR) ,
+'[Nuro_SimBehavior_Performance_]*[-]*[_]*[2-9][0-9]{3}[-][0|1][0-9][-][0-3][0-9]') ,
+'TC-093 _ SUBJECT-LINE-OF-THE-EMAIL FOLLOWS THE REGULAR EXPRESSION _ PASS',
+'TC-093 _ SUBJECT-LINE-OF-THE-EMAIL FOLLOWS THE REGULAR EXPRESSION _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE subject_line_of_the_email IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(file_name as VARCHAR) ,
+'[`Nuro_SimBehavior_Performance_`]{1}*[-]*[_]*[2-9][0-9]{3}[-][0|1][0-9][-][0-3][0-9][_]*[`.csv`]{2}') ,
+'TC-094 _ FILE-NAME FOLLOWS THE REGULAR EXPRESSION _ PASS',
+'TC-094 _ FILE-NAME FOLLOWS THE REGULAR EXPRESSION _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE file_name IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+STARTS_WITH (file_name , 'Nuro_SimBehavior_Performance_') ,
+'TC-095 _ FILE-NAME STARTS WITH Nuro-SimBehavior-Performance _ PASS',
+'TC-095 _ FILE-NAME STARTS WITH Nuro-SimBehavior-Performance _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE file_name IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(file_name as VARCHAR) LIKE '%.csv') ,
+'TC-096 _ FILE-NAME ENDS WITH .csv _ PASS',
+'TC-096 _ FILE-NAME ENDS WITH .csv _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE file_name IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(file_name as VARCHAR) LIKE '%_%_%_%-%_%-%-%.csv') ,
+'TC-097 _ FILE-NAME CONTAINS THE PROPER FREQUENCY OF SPECIAL CHARACTERS _ PASS',
+'TC-097 _ FILE-NAME CONTAINS THE PROPER FREQUENCY OF SPECIAL CHARACTERS _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE file_name IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(task_type as VARCHAR) LIKE '%-%') ,
+'TC-098 _ TASK-TYPE CONTAINS HYPHEN _ PASS',
+'TC-098 _ TASK-TYPE CONTAINS HYPHEN _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE task_type IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(task_type as VARCHAR) NOT LIKE '%\_%') ,
+'TC-099 _ TASK-TYPE DOES NOT CONTAINS UNDERSCORE _ PASS',
+'TC-099 _ TASK-TYPE DOES NOT CONTAINS UNDERSCORE _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE task_type IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+REGEXP_LIKE (CAST(date as VARCHAR) ,
+'[2-9][0-9]{3}[-][0|1][0-9][-][0-3][0-9][ ][0]{2}[:][0]{2}[:][0]{2}[.][0]{3}') ,
+'TC-100 _ DATE FOLLOWS THE REGULAR EXPRESSION _ PASS',
+'TC-100 _ DATE FOLLOWS THE REGULAR EXPRESSION _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE date IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(CAST(year AS int) >= 2023) ,
+'TC-101 _ YEAR SHOULD BE GREATER THAN OR EQUAL TO 2023 _ PASS',
+'TC-101 _ YEAR SHOULD BE GREATER THAN OR EQUAL TO 2023 _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE year IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(LENGTH(year) >= 4) ,
+'TC-102 _ LENGTH OF YEAR SHOULD BE GREATER THAN OR EQUAL TO 4 _ PASS',
+'TC-102 _ LENGTH OF YEAR SHOULD BE GREATER THAN OR EQUAL TO 4 _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE year IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+CAST(month AS int) >= 1 AND CAST(month AS int) <=12 ,
+'TC-103 _ MONTH SHOULD BE IN FROM 1 TO 12 _ PASS',
+'TC-103 _ MONTH SHOULD BE IN FROM 1 TO 12 _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE month IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(LENGTH(month) = 2) ,
+'TC-104 _ LENGTH OF MONTH SHOULD BE EQUAL TO 2 _ PASS',
+'TC-104 _ LENGTH OF MONTH SHOULD BE EQUAL TO 2 _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE month IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+CAST(day AS int) >= 1 AND CAST(day AS int) <=31 ,
+'TC-105 _ DAY SHOULD BE IN FROM 1 TO 31 _ PASS',
+'TC-105 _ DAY SHOULD BE IN FROM 1 TO 31 _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE day IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+(LENGTH(day) = 2) ,
+'TC-106 _ LENGTH OF DAY SHOULD BE EQUAL TO 2 _ PASS',
+'TC-106 _ LENGTH OF DAY SHOULD BE EQUAL TO 2 _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE day IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+CONCAT("subject_line_of_the_email" , '.csv') = "file_name",
+'TC-107 _ SUBJECT-LINE-OF-THE-EMAIL + .csv = FILE-NAME _ PASS',
+'TC-107 _ SUBJECT-LINE-OF-THE-EMAIL + .csv = FILE-NAME _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE "subject_line_of_the_email" IS NOT NULL 
+AND "file_name" IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+POSITION(UPPER("task_type") IN UPPER("subject_line_of_the_email")) > 0,
+'TC-108 _ TASK-TYPE IS A SUBSTRING OF SUBJECT-LINE-OF-THE-EMAIL _ PASS',
+'TC-108 _ TASK-TYPE IS A SUBSTRING OF SUBJECT-LINE-OF-THE-EMAIL _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE "subject_line_of_the_email" IS NOT NULL 
+AND "task_type" IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+POSITION(UPPER("task_type") IN UPPER("file_name")) > 0,
+'TC-109 _ TASK-TYPE IS A SUBSTRING OF FILE-NAME _ PASS',
+'TC-109 _ TASK-TYPE IS A SUBSTRING OF FILE-NAME _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE "file_name" IS NOT NULL 
+AND "task_type" IS NOT NULL )
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+SPLIT_PART(CAST("date" AS VARCHAR) , ' ' , 1) = SPLIT_PART(CAST("subject_line_of_the_email" AS VARCHAR) , '_' , 5) ,
+'TC-110 _ LAST 10 CHARACTERS OF SUBJECT-LINE-OF-THE-EMAIL = FIRST 10 CHARACTERS OF DATE _ PASS',
+'TC-110 _ LAST 10 CHARACTERS OF SUBJECT-LINE-OF-THE-EMAIL = FIRST 10 CHARACTERS OF DATE _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE "date" IS NOT NULL 
+AND "subject_line_of_the_email" IS NOT NULL)
+
+UNION ALL
+
+(SELECT DISTINCT IF (
+SPLIT_PART(CAST("time_stamp_of_data_ingestion" AS VARCHAR) , ' ' , 1) = CONCAT("year",'-',"month",'-',"day") ,
+'TC-111 _ FIRST 10 CHARACTERS OF TIMESTAMP-OF-DATA-INGESTION = CONCAT OF YEAR-MONTH-DATE _ PASS',
+'TC-111 _ FIRST 10 CHARACTERS OF TIMESTAMP-OF-DATA-INGESTION = CONCAT OF YEAR-MONTH-DATE _ FAIL'
+) AS STATUS
+FROM "data-ingestion-nuro-playground"."nuro_simbehavior"
+WHERE "time_stamp_of_data_ingestion" IS NOT NULL 
+AND "year" IS NOT NULL 
+AND "month" IS NOT NULL 
+AND "day" IS NOT NULL)
+
+)
+
+SELECT SPLIT_PART(STATUS, '_', 1) AS TEST_CASE_NUMBER,
+SPLIT_PART(STATUS, '_', 2) AS TEST_CASE_SUMMARY,
+SPLIT_PART(STATUS, '_', 3) AS TEST_CASE_STATUS
+FROM TEST_STATUS
+ORDER BY STATUS  
